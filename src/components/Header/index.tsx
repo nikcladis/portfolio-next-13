@@ -5,9 +5,9 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 const Header = () => {
   return (
-    <header className="sm:flex sm:justify-between py-3 px-4 border-b">
+    <header className="sticky top-0 z-20 sm:flex sm:justify-between py-3 px-4 border-b backdrop-blur-md">
       <Container>
-        <div className="flex items-center justify-between backdrop-blur-md">
+        <div className="flex items-center justify-between">
           <h1 className="font-bold">nikcladis.dev</h1>
           <div className="flex items-center">
             <Button variant="ghost" size="icon">
