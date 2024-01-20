@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="sm:flex sm:justify-between py-3 px-4 border-b">
       <Container>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between backdrop-blur-md">
           <h1 className="font-bold">nikcladis.dev</h1>
           <div className="flex items-center">
             <Button variant="ghost" size="icon">
