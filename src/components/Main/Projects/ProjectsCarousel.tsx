@@ -17,7 +17,7 @@ const ProjectsCarousel = () => {
           <CarouselItem key={index}>
             <div className="p-2">
               <Card className="bg-transparent backdrop-blur-md">
-                <CardContent className="flex h-[560px] items-center justify-center p-6">
+                <CardContent className="flex h-screen max-h-[87vh] items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>
               </Card>
@@ -25,10 +25,10 @@ const ProjectsCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="relative -top-[285px] -right-[65px]">
+      <div className="relative -top-[44.5vh] -right-[65px]">
         <CarouselPrevious />
       </div>
-      <div className="relative -top-[285px] -left-[65px] ">
+      <div className="relative -top-[44.5vh] -left-[65px] ">
         <CarouselNext />
       </div>
     </Carousel>
