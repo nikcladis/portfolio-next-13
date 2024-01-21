@@ -1,16 +1,17 @@
 import Cubic from "@/components/Spline/Cubic";
+import Container from "@/components/ui/container";
 import Hero from "./Hero";
 
 const Main = () => {
   return (
     <main className="relative">
-      <Hero />
-      <section className="flex items-center justify-center h-screen">
-        <p className="z-10">Hello</p>
-      </section>
-      <div className="fixed inset-0">
+      <Container>
+        <Hero />
+        <section className="flex items-center justify-center h-screen">
+          <p className="z-10">Hello</p>
+        </section>
         <Cubic />
-      </div>
+      </Container>
     </main>
   );
 };
