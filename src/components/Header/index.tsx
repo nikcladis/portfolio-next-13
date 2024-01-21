@@ -9,8 +9,8 @@ const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-20 sm:flex sm:justify-between pt-4 pb-3 px-4 border-b backdrop-blur-md">
-        <ProgressBar />
         <Container>
+          <ProgressBar />
           <div className="flex items-center justify-between">
             <h1 className="hidden sm:flex font-bold">nikcladis.dev</h1>
             <Button variant="ghost" size="icon" className="sm:hidden">

@@ -20,12 +20,12 @@ const ProgressBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <Progress
       value={progress}
-      className="h-1 rounded-none bg-transparent absolute top-0 left-0 right-0"
+      className="h-1 rounded-none bg-transparent absolute top-0 left-0 right-0 -z-10"
     />
   );
 };
