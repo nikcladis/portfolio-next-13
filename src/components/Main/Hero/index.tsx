@@ -4,7 +4,7 @@ import { BookMarked } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col p-4 h-screen">
+    <section className="flex flex-col p-4 h-screen max-h-[90vh]">
       <p className="mt-12 z-10 text-4xl font-bold">
         <span className="block mt-5">Creative</span>
         <span className="block mt-5">Frontend</span>
