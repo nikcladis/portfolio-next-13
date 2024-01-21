@@ -2,6 +2,7 @@ import Container from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
       <Container>
         <div className="flex items-center justify-between">
           <h1 className="font-bold">nikcladis.dev</h1>
-          <div className="flex items-center">
+          <div className="hidden sm:flex items-center">
             <Button variant="ghost" size="icon">
               <a
                 href="https://www.github.com/nikcladis"
@@ -20,6 +21,9 @@ const Header = () => {
               </a>
             </Button>
             <ThemeToggle />
+          </div>
+          <div className="sm:hidden">
+            <Menu />
           </div>
         </div>
       </Container>

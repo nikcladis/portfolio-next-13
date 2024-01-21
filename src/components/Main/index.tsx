@@ -1,11 +1,10 @@
 import Cubic from "@/components/Spline/Cubic";
+import Hero from "./Hero";
 
 const Main = () => {
   return (
     <main className="relative">
-      <section className="flex items-center justify-center h-screen">
-        <p className="z-10">Hello</p>
-      </section>
+      <Hero />
       <section className="flex items-center justify-center h-screen">
         <p className="z-10">Hello</p>
       </section>
