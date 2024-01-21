@@ -16,7 +16,7 @@ const ProjectsCarousel = () => {
         {Array.from({ length: 3 }).map((_, index) => (
           <CarouselItem key={index}>
             <Card className="border-none bg-transparent shadow-none">
-              <CardContent className="relative flex h-screen max-h-[87vh] items-center justify-center bg-transparent">
+              <CardContent className="relative flex h-screen max-h-[87vh] items-center justify-center">
                 <div
                   style={{
                     backgroundImage: `url('/iphone_frame.png')`,
@@ -24,9 +24,9 @@ const ProjectsCarousel = () => {
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
-                  className="w-full h-full flex justify-center items-center bg-transparent relative overflow-hidden"
+                  className="z-10 w-full h-full flex justify-center items-center bg-transparent overflow-hidden"
                 ></div>
-                <div className="absolute -z-10 top-2 bottom-8 right-16 left-16 rounded-3xl flex justify-center items-center bg-transparent backdrop-blur-md">
+                <div className="absolute -z-10 top-4 bottom-8 left-10 right-10 rounded-3xl flex justify-center items-center bg-transparent backdrop-blur-md">
                   Hey
                 </div>
               </CardContent>
