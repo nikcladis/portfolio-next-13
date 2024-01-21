@@ -2,18 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
+import throttle from "lodash/throttle";
 
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const winScroll = window.scrollY;
-      const height = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = (winScroll / height) * 100;
-      setProgress(scrolled);
-    };
+  const handleScroll = throttle(() => {
+    const winScroll = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (winScroll / height) * 100;
+    setProgress(scrolled);
+  }, 200);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
