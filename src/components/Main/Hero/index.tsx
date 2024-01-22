@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section className="flex flex-col justify-end h-[90svh] mx-auto w-full max-w-7xl px-4 xl:px-0">
-      <p className="z-10 font-bold mb-12 md:mb-0">
+      <p className="z-10 font-bold">
         <motion.span
           initial={{ x: -200 }}
           animate={{ x: 0 }}
