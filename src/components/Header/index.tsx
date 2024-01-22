@@ -5,11 +5,9 @@ import Navigation from "./Navigation";
 const Header = () => {
   return (
     <>
-      <header className="sticky top-0 z-20 sm:flex sm:justify-between">
-        <Container>
-          <ProgressBar />
-          <Navigation />
-        </Container>
+      <header className="sticky top-0 z-20 flex justify-between">
+        <ProgressBar />
+        <Navigation />
       </header>
     </>
   );

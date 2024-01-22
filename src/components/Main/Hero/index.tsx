@@ -1,37 +1,35 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { BookMarked } from "lucide-react";
+"use client";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col p-4 h-screen max-h-[90vh]">
-      <p className="mt-12 z-10 text-4xl font-bold">
-        <span className="block mt-5">Creative</span>
-        <span className="block mt-5">Frontend</span>
-        <span className="block mt-5">Developer.</span>
+    <section className="flex flex-col justify-end h-[90vh] mx-auto w-full max-w-7xl px-4 xl:px-0">
+      <p className="z-10 font-bold">
+        <motion.span
+          initial={{ x: -200 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="block mt-5 text-6xl md:text-9xl"
+        >
+          Hello,
+        </motion.span>
+        <motion.span
+          initial={{ x: 500 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.8, duration: 0.7 }}
+          className="block mt-5 text-4xl md:text-7xl"
+        >
+          I am Nikolaos
+        </motion.span>
+        <motion.span
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="block mt-8 text-lg md:text-3xl text-gray-500"
+        >
+          A Frontend Developer based in Greece
+        </motion.span>
       </p>
-      <div className="flex flex-wrap gap-3 z-10 mt-[20%] max-w-[150px]">
-        <Badge variant="secondary" className="text-md w-fit">
-          React
-        </Badge>
-        <Badge variant="secondary" className="text-md w-fit">
-          Next
-        </Badge>
-        <Badge variant="secondary" className="text-md w-fit">
-          TypeScript
-        </Badge>
-        <Badge variant="secondary" className="text-md w-fit">
-          UI/UX
-        </Badge>
-      </div>
-      <Button
-        variant="default"
-        size="lg"
-        className="w-fit self-end mt-[15%] z-10 text-lg"
-      >
-        <BookMarked className="mr-2 h-4 w-4" />
-        Projects
-      </Button>
     </section>
   );
 };

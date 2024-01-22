@@ -1,5 +1,14 @@
 "use client";
-
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { FaXTwitter } from "react-icons/fa6";
@@ -29,32 +38,57 @@ const Navigation = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="flex items-center justify-between pt-4 pb-3 px-4 border-b backdrop-blur-md"
+      className="w-full flex items-center justify-center px-4 py-2 border-b backdrop-blur-md"
     >
-      <h1 className="hidden sm:flex font-bold">nikcladis.dev</h1>
-      <Button variant="ghost" size="icon" className="sm:hidden">
-        <Menu />
-      </Button>
-      <div className="flex items-center">
-        <Button variant="ghost" size="icon">
-          <a
-            href="https://www.twitter.com/nikcladis"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaXTwitter className="h-[1.2rem] w-[1.2rem]" />
-          </a>
+      <div className="w-full max-w-7xl flex items-center justify-between">
+        <div className="hidden md:flex">
+          <NavigationMenu>
+            <NavigationMenuList className="flex items-baseline gap-5">
+              <NavigationMenuItem className="font-bold cursor-pointer">
+                nikcladis.dev
+              </NavigationMenuItem>
+              <NavigationMenuItem className="font-normal transition-opacity ease 150ms hover:opacity-100 opacity-75 text-sm cursor-pointer">
+                About
+              </NavigationMenuItem>
+              <NavigationMenuItem className="font-normal transition-opacity ease 150ms hover:opacity-100 opacity-75 text-sm cursor-pointer">
+                Projects
+              </NavigationMenuItem>
+              <NavigationMenuItem className="font-normal transition-opacity ease 150ms hover:opacity-100 opacity-75 text-sm cursor-pointer">
+                Experience
+              </NavigationMenuItem>
+              <NavigationMenuItem className="font-normal transition-opacity ease 150ms hover:opacity-100 opacity-75 text-sm cursor-pointer">
+                Technologies
+              </NavigationMenuItem>
+              <NavigationMenuItem className="font-normal transition-opacity ease 150ms hover:opacity-100 opacity-75 text-sm cursor-pointer">
+                Contact
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+        <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu />
         </Button>
-        <Button variant="ghost" size="icon">
-          <a
-            href="https://www.github.com/nikcladis"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]" />
-          </a>
-        </Button>
-        <ThemeToggle />
+        <div className="flex items-center">
+          <Button variant="ghost" size="icon">
+            <a
+              href="https://www.twitter.com/nikcladis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaXTwitter className="h-[1.2rem] w-[1.2rem]" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon">
+            <a
+              href="https://www.github.com/nikcladis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]" />
+            </a>
+          </Button>
+          <ThemeToggle />
+        </div>
       </div>
     </motion.nav>
   );
