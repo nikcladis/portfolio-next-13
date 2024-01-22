@@ -1,8 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="z-20 h-screen backdrop-blur-md flex items-center justify-center">
-      Footer
-    </footer>
+    <footer className="z-20 h-[100dvh] backdrop-blur-md flex items-center justify-center"></footer>
   );
 };
 

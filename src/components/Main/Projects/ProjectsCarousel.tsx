@@ -8,36 +8,44 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Iphone14Pro from "@/components/Devices/iphone-14-pro";
 
 const ProjectsCarousel = () => {
   return (
     <Carousel className="z-10 w-full overflow-hidden">
       <CarouselContent>
-        {Array.from({ length: 3 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <Card className="border-none bg-transparent shadow-none">
-              <CardContent className="relative flex h-screen max-h-[87vh] items-center justify-center">
-                <div
-                  style={{
-                    backgroundImage: `url('/iphone_frame.png')`,
-                    backgroundSize: "contain",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                  className="z-10 w-full h-full flex justify-center items-center bg-transparent overflow-hidden"
-                ></div>
-                <div className="absolute -z-10 top-4 bottom-8 left-10 right-10 rounded-3xl flex justify-center items-center bg-transparent backdrop-blur-md">
-                  Hey
-                </div>
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
+        <CarouselItem>
+          <Card className="border-none bg-transparent shadow-none">
+            <CardContent className="relative flex h-[100dvh] items-center justify-center">
+              <Iphone14Pro color="device-silver">
+                <div></div>
+              </Iphone14Pro>
+            </CardContent>
+          </Card>
+        </CarouselItem>
+        <CarouselItem>
+          <Card className="border-none bg-transparent shadow-none">
+            <CardContent className="relative flex h-[100dvh] items-center justify-center">
+              <Iphone14Pro color="device-gold">
+                <div></div>
+              </Iphone14Pro>
+            </CardContent>
+          </Card>
+        </CarouselItem>
+        <CarouselItem>
+          <Card className="border-none bg-transparent shadow-none">
+            <CardContent className="relative flex h-[100dvh] items-center justify-center">
+              <Iphone14Pro color="device-purple">
+                <div></div>
+              </Iphone14Pro>
+            </CardContent>
+          </Card>
+        </CarouselItem>
       </CarouselContent>
-      <div className="relative -top-[44.5vh] -right-[65px]">
+      <div className="relative -top-[50vh] -right-[65px]">
         <CarouselPrevious />
       </div>
-      <div className="relative -top-[44.5vh] -left-[65px] ">
+      <div className="relative -top-[50vh] -left-[65px] ">
         <CarouselNext />
       </div>
     </Carousel>
