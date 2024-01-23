@@ -8,7 +8,6 @@ const Main = () => {
     <main className="relative">
       <Hero />
       <Projects />
-      {/* <Cubic /> */}
     </main>
   );
 };
