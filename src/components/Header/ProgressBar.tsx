@@ -12,7 +12,7 @@ const ProgressBar = () => {
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = (winScroll / height) * 100;
     setProgress(scrolled);
-  }, 200);
+  }, 300);
 
   useLayoutEffect(() => {
     window.addEventListener("scroll", handleScroll);
