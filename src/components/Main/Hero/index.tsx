@@ -1,6 +1,6 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { debounce } from "lodash";
 
 const Hero = () => {
@@ -9,13 +9,13 @@ const Hero = () => {
 
   const handleScroll = debounce(() => {
     setScrollY(window.scrollY);
-  }, 200);
+  }, 50);
 
-  useEffect(() => {
-    controls.start({ opacity: 1 - scrollY / 100 });
+  useLayoutEffect(() => {
+    controls.start({ opacity: 1 - scrollY / 150 });
   }, [scrollY, controls]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {

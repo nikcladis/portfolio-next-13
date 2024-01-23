@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import throttle from "lodash/throttle";
 
@@ -14,7 +14,7 @@ const ProgressBar = () => {
     setProgress(scrolled);
   }, 200);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
