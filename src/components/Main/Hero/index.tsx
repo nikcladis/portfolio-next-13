@@ -1,17 +1,18 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
+import { debounce } from "lodash";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   const controls = useAnimation();
 
-  const handleScroll = () => {
+  const handleScroll = debounce(() => {
     setScrollY(window.scrollY);
-  };
+  }, 200);
 
   useEffect(() => {
-    controls.start({ opacity: 1 - scrollY / 150 }); // Adjust the 500 value as needed
+    controls.start({ opacity: 1 - scrollY / 100 });
   }, [scrollY, controls]);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Hero = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <section className="fixed inset-0 z-0 flex flex-col justify-end h-[90svh] mx-auto w-full max-w-7xl px-4 xl:px-0 overflow-hidden">
@@ -29,7 +30,7 @@ const Hero = () => {
           initial={{ x: -400 }}
           animate={{ x: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="block mt-5 text-6xl md:text-9xl"
+          className="block mt-5 text-[6rem] md:text-[8rem]"
         >
           <span className="relative">
             <motion.span
@@ -49,7 +50,7 @@ const Hero = () => {
           initial={{ x: 500, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.7 }}
-          className="block mt-5 text-4xl md:text-7xl"
+          className="block text-[2.7rem] md:text-[5rem]"
         >
           I am Nikolaos
         </motion.span>
@@ -57,7 +58,7 @@ const Hero = () => {
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="block mt-8 text-lg md:text-3xl text-gray-500"
+          className="block mt-10 text-[1rem] md:text-[2rem] text-gray-500"
         >
           A Frontend Developer based in Greece
         </motion.span>
