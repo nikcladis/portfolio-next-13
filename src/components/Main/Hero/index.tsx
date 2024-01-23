@@ -1,17 +1,18 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
+import { debounce } from "lodash";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   const controls = useAnimation();
 
-  const handleScroll = () => {
+  const handleScroll = debounce(() => {
     setScrollY(window.scrollY);
-  };
+  }, 50);
 
   useEffect(() => {
-    controls.start({ opacity: 1 - scrollY / 150 }); // Adjust the 500 value as needed
+    controls.start({ opacity: 1 - scrollY / 150 });
   }, [scrollY, controls]);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Hero = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <section className="fixed inset-0 z-0 flex flex-col justify-end h-[90svh] mx-auto w-full max-w-7xl px-4 xl:px-0 overflow-hidden">
