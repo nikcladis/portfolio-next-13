@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 const Header = () => {
   return (
     <>
-      <header className="sticky top-0 z-20 flex justify-between">
+      <header className="sticky top-0 z-50 flex justify-between">
         <ProgressBar />
         <Navigation />
       </header>

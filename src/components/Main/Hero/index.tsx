@@ -1,9 +1,29 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const controls = useAnimation();
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    controls.start({ opacity: 1 - scrollY / 150 }); // Adjust the 500 value as needed
+  }, [scrollY, controls]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="flex flex-col justify-end h-[90svh] mx-auto w-full max-w-7xl px-4 xl:px-0 overflow-hidden">
+    <section className="fixed inset-0 z-0 flex flex-col justify-end h-[90svh] mx-auto w-full max-w-7xl px-4 xl:px-0 overflow-hidden">
       <p className="z-10 font-bold">
         <motion.span
           initial={{ x: -400 }}
@@ -11,7 +31,19 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="block mt-5 text-6xl md:text-9xl"
         >
-          Hello,
+          <span className="relative">
+            <motion.span
+              initial={{ opacity: 1 }}
+              animate={controls}
+              className="absolute z-10 top-0 bottom-0"
+            >
+              Hello,
+            </motion.span>
+            <span className="absolute z-0 top-0 bottom-0 text-red-500">
+              Hell
+            </span>
+          </span>
+          &#8203;
         </motion.span>
         <motion.span
           initial={{ x: 500, opacity: 0 }}
