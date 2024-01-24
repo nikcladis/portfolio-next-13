@@ -17,7 +17,7 @@ const SectionOne = () => {
       style={{ scale: scrollYProgress }}
       className="z-10 h-[100vh] mx-auto w-full max-w-7xl overflow-hidden sticky top-0"
     >
-      <div className="mt-12 max-w-full bg-gray-400 rounded-xl h-[80%] flex flex-col md:flex-row gap-4">
+      <div className="mt-12 max-w-[96%] bg-gray-400 rounded-xl h-[80%] flex flex-col md:flex-row gap-4">
         {/* <div className="flex flex-col gap-4 h-full w-full md:w-2/3">
           <div className="w-full bg-gray-500 md:h-fit rounded-xl overflow-hidden">
             <Image

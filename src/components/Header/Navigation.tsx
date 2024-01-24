@@ -14,32 +14,10 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { FaXTwitter } from "react-icons/fa6";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Menu } from "lucide-react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
 
 const Navigation = () => {
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-  });
-
   return (
-    <motion.nav
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: "-100%" },
-      }}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="w-full flex items-center justify-center px-4 py-1 border-b bg-white dark:bg-[#020817]"
-    >
+    <nav className="w-full flex items-center justify-center px-4 py-1 border-b bg-white dark:bg-[#020817]">
       <div className="w-full max-w-7xl flex items-center justify-between">
         <div className="hidden md:flex">
           <NavigationMenu>
@@ -90,7 +68,7 @@ const Navigation = () => {
           <ThemeToggle />
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
