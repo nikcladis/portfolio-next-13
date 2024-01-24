@@ -6,6 +6,7 @@ const Main = () => {
     <main className="relative">
       <Hero />
       <Projects />
+      <div className="z-20 h-screen bg-gray-500"></div>
     </main>
   );
 };

@@ -4,7 +4,7 @@ import SectionThree from "./project-3";
 
 const Projects = () => {
   return (
-    <div className="relative mt-[100svh]">
+    <div className="relative mt-[100svh] px-3">
       <SectionOne />
       <SectionTwo />
       <SectionThree />

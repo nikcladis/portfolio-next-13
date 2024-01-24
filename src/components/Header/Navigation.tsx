@@ -38,7 +38,7 @@ const Navigation = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="w-full flex items-center justify-center px-4 py-2 border-b backdrop-blur-md"
+      className="w-full flex items-center justify-center px-4 py-1 border-b bg-white dark:bg-[#020817]"
     >
       <div className="w-full max-w-7xl flex items-center justify-between">
         <div className="hidden md:flex">
